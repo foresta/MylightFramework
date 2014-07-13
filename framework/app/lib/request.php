@@ -16,7 +16,7 @@ class Request {
             if(Request::issetQuery()){
                 return $_GET;
             }
-            return [];
+            return array();
         }
     }
 
@@ -31,7 +31,7 @@ class Request {
             if(Request::issetPost()){
                 return $_POST;
             }
-            return [];
+            return array();
         }
     }
 
