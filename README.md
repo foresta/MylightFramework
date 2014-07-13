@@ -1,4 +1,4 @@
-framework
+Mylight-Framework
 =========
 
-phpのフレームワーク
+phpのシンプルで簡単なフレームワークです。
