@@ -11,6 +11,7 @@ define('SYS_DIR',  APP_DIR . 'system/');
 define('LIB_DIR',  APP_DIR . 'lib/');
 define('CONF_DIR', APP_DIR . 'conf/');
 define('VIEW_DIR', APP_DIR . 'view/');
+define('MAIL_TEMPLATE', VIEW_DIR . 'mail/');
 
 // library file
 require_once(LIB_DIR . 'request.php');
@@ -42,22 +43,16 @@ else
     $http = "http://";
 
 // public DIR define
-define('PUBLIC_DIR' , 'public/' . $carr . '/');
-define('IMG_DIR', PUBLIC_DIR . 'image/');
-define('JS_DIR', PUBLIC_DIR . 'js/');
-define('CSS_DIR', PUBLIC_DIR . 'css/');
+define('IMG_DIR', __DIR__ . '/' . $carr . '/image/');
+define('JS_DIR',  __DIR__ . '/' . $carr . '/js/');
+define('CSS_DIR', __DIR__ . '/' . $carr . '/css/');
 
-// システム側から使用される定数（ドキュメントルートがサーバーのルート）
-define('VIEW_DIR', __DIR__ . '/public/' . $carr . '/');
-define('TEMPLATE_DIR', VIEW_DIR . 'template/');
+// access host define
 define('HOST',  $http . Request::getServer('HTTP_HOST'));
-define('MAIL_TEMPLATE', __DIR__ . '/public/mail/');
-
 
 
 // リクエストされたURIに応じてコントローラを呼び出す
 $uri = Request::getServer('REQUEST_URI');
-
 $uri = preg_replace("/\/$/", "", $uri);
 
 // QueryStringと分ける
@@ -70,14 +65,14 @@ if(empty($uri)){
 
 $uri = preg_replace('/^\//', '', $uri);
 $className = str_replace(' ', '_', ucwords(str_replace('/', ' ', $uri)));
-$filepath = __DIR__ . '/system/app/' . $uri . '.php';
+$filepath = SYS_DIR . $uri . '.php';
 if(file_exists($filepath)){
     require_once($filepath);
     new $className;
 }
 else{
     header('HTTP/1.1 404 Not Found');
-    require_once(__DIR__ . '/public/' . $carr . '/error.html');
+    require_once(__DIR__ . '/' . $carr . '/error.html');
 }
 
 
