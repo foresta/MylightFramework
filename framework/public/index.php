@@ -10,8 +10,6 @@ define('APP_DIR',  __DIR__ . '/../app/');
 define('SYS_DIR',  APP_DIR . 'system/');
 define('LIB_DIR',  APP_DIR . 'lib/');
 define('CONF_DIR', APP_DIR . 'conf/');
-define('VIEW_DIR', APP_DIR . 'view/');
-define('MAIL_TEMPLATE', VIEW_DIR . 'mail/');
 
 // library file
 require_once(LIB_DIR . 'request.php');
@@ -41,6 +39,9 @@ if ( Request::issetServer('HTTPS') && Request::getServer('HTTPS') == 'on')
     $http = "https://";
 else
     $http = "http://";
+
+define('VIEW_DIR', APP_DIR . 'view/' . $carr . '/');
+define('MAIL_TEMPLATE', APP_DIR . 'view/mail/');
 
 // public DIR define
 define('IMG_DIR', __DIR__ . '/' . $carr . '/image/');
