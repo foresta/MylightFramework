@@ -17,6 +17,7 @@ require_once(LIB_DIR . 'base.php');
 require_once(LIB_DIR . 'view.php');
 require_once(LIB_DIR . 'database.php');
 require_once(LIB_DIR . 'mailer.php');
+require_once(LIB_DIR . 'session.php');
 
 // UserAgentに応じて処理を切り分ける
 $ua = Request::getServer('HTTP_USER_AGENT');
