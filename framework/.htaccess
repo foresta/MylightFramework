@@ -1,0 +1,10 @@
+<Files ~ "^.(htpasswd|htaccess)$">
+   deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # routing
+    RewriteRule !\.(js|ico|gif|jpg|png|css|var|xml|swf|txt|apk|jpeg|JPG)$ index.php?%{QUERY_STRING}
+</IfModule>
