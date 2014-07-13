@@ -5,11 +5,12 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', '1');
 ini_set('date.timezone', 'Asia/Tokyo');
 
-// DIR define
-define('SYS_DIR', __DIR__ . '/system/');
-define('LIB_DIR', SYS_DIR . 'lib/');
-define('CONF_DIR', SYS_DIR . 'conf/');
-define('DAO_DIR', SYS_DIR . 'app/Dao/');
+// system DIR define
+define('APP_DIR',  __DIR__ . '/../app/');
+define('SYS_DIR',  APP_DIR . 'system/');
+define('LIB_DIR',  APP_DIR . 'lib/');
+define('CONF_DIR', APP_DIR . 'conf/');
+define('VIEW_DIR', APP_DIR . 'view/');
 
 // library file
 require_once(LIB_DIR . 'request.php');
@@ -18,6 +19,7 @@ require_once(LIB_DIR . 'view.php');
 require_once(LIB_DIR . 'database.php');
 require_once(LIB_DIR . 'mailer.php');
 require_once(LIB_DIR . 'session.php');
+require_once(LIB_DIR . 'OHM.php');
 
 // UserAgentに応じて処理を切り分ける
 $ua = Request::getServer('HTTP_USER_AGENT');
@@ -39,8 +41,7 @@ if ( Request::issetServer('HTTPS') && Request::getServer('HTTPS') == 'on')
 else
     $http = "http://";
 
-// sp/pcのテンプレートディレクトリを定義
-// html側から使用される定数（ドキュメントルートがWEBのルート）
+// public DIR define
 define('PUBLIC_DIR' , 'public/' . $carr . '/');
 define('IMG_DIR', PUBLIC_DIR . 'image/');
 define('JS_DIR', PUBLIC_DIR . 'js/');
