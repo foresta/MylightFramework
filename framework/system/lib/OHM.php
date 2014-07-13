@@ -1,5 +1,9 @@
 <?php
 
+function ohm() {
+    return new OHM();
+}
+
 class OHM {
 
     private $value = null, $hash = null, $key = null, $defval = null, $type;
