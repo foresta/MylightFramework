@@ -30,11 +30,12 @@ abstract class Base {
 
     protected function redirectTo($url){
         header("Location: " . HOST . $url);
+        exit();
     }
 
 
     protected function redirectTop(){
-        $this->redirect("");
+        $this->redirectTo("");
     }
 
     /*
