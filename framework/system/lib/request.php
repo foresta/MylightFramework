@@ -35,7 +35,7 @@ class Request {
 
     public static function getServer($name){
         if(isset($_SERVER[$name])){
-            return htmlspecialchars($_SERVER[$name],ENT_QUOTES);
+            return htmlspecialchars($_SERVER[$name], ENT_QUOTES);
         }
     }
 
@@ -43,22 +43,21 @@ class Request {
         return isset($_SERVER[$name]);
     }
 
-    public static function issetQuery($name=""){
+    public static function issetQuery($name = ""){
         if($name){
-            return isset($_GET[$name]);   
+            return isset($_GET[$name]);
         }
         else{
             return isset($_GET);
         }
     }
 
-   
-    public static function issetPost($name=""){
+    public static function issetPost($name = ""){
         if($name){
-            return isset($_POST[$name]);   
+            return isset($_POST[$name]);
         }
         else{
             return isset($_POST);
         }
     }
-} 
+}
