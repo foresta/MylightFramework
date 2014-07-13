@@ -10,13 +10,14 @@ class Request {
             if(Request::issetQuery($name)){
                 return htmlspecialchars($_GET[$name], ENT_QUOTES);
             }
+            return null;
         }
         else{
             if(Request::issetQuery()){
                 return $_GET;
             }
+            return [];
         }
-        return "";
     }
 
     public static function getPost($name){
@@ -24,19 +25,21 @@ class Request {
             if(Request::issetPost($name)){
                 return htmlspecialchars($_POST[$name], ENT_QUOTES);
             }
+            return null;
         }
         else{
             if(Request::issetPost()){
                 return $_POST;
             }
+            return [];
         }
-        return "";
     }
 
     public static function getServer($name){
         if(isset($_SERVER[$name])){
             return htmlspecialchars($_SERVER[$name], ENT_QUOTES);
         }
+        return null;
     }
 
     public static function issetServer($name){
