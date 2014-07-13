@@ -44,9 +44,9 @@ define('VIEW_DIR', APP_DIR . 'view/' . $carr . '/');
 define('MAIL_TEMPLATE', APP_DIR . 'view/mail/');
 
 // public DIR define
-define('IMG_DIR', __DIR__ . '/' . $carr . '/image/');
-define('JS_DIR',  __DIR__ . '/' . $carr . '/js/');
-define('CSS_DIR', __DIR__ . '/' . $carr . '/css/');
+define('IMG_DIR', $carr .'/image/');
+define('JS_DIR',  $carr .'/js/');
+define('CSS_DIR', $carr .'/css/');
 
 // access host define
 define('HOST',  $http . Request::getServer('HTTP_HOST'));

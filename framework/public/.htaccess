@@ -1,4 +1,4 @@
-<Files ~ "^.(htpasswd|htaccess)$">
+<Files ~ "^¥.(htpasswd|htaccess)$">
    deny from all
 </Files>
 
