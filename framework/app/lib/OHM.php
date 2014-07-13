@@ -27,31 +27,31 @@ class OHM {
     }
 
     public function server($key = null) {
-        return $this->global('_SERVER', $key);
+        return $this->globalvar('_SERVER', $key);
     }
 
     public function get($key = null) {
-        return $this->global('_GET', $key);
+        return $this->globalvar('_GET', $key);
     }
 
     public function post($key = null) {
-        return $this->global('_POST', $key);
+        return $this->globalvar('_POST', $key);
     }
 
     public function files($key = null) {
-        return $this->global('_FILES', $key);
+        return $this->globalvar('_FILES', $key);
     }
 
     public function cookie($key = null) {
-        return $this->global('_COOKIE', $key);
+        return $this->globalvar('_COOKIE', $key);
     }
 
     public function session($key = null) {
-        return $this->global('_SESSION', $key);
+        return $this->globalvar('_SESSION', $key);
     }
 
     public function env($key = null) {
-        return $this->global('_ENV', $key);
+        return $this->globalvar('_ENV', $key);
     }
 
     public function key($key) {
@@ -107,7 +107,7 @@ class OHM {
         return $defval;
     }
 
-    private function global($name, $key) {
+    private function globalvar($name, $key) {
         if(isset($$name) && is_array($$name))
             $this->hash = $$name;
         $this->key = $key;
