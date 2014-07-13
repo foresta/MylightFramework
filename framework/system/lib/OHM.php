@@ -91,7 +91,7 @@ class OHM {
         return $this;
     }
 
-    public function map($object) {
+    public function map() {
         if(isset($this->hash)) {
             if(isset($this->key) && isset($this->hash[$this->key]))
                 return call_user_func($this->type, $this->hash[$this->key],
