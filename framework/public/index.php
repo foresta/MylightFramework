@@ -10,6 +10,7 @@ define('APP_DIR',  __DIR__ . '/../app/');
 define('SYS_DIR',  APP_DIR . 'system/');
 define('LIB_DIR',  APP_DIR . 'lib/');
 define('CONF_DIR', APP_DIR . 'conf/');
+define('LOG_DIR', __DIR__ . '/../log/')
 
 // library file
 require_once(LIB_DIR . 'request.php');
