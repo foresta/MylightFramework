@@ -36,6 +36,7 @@ abstract class Base {
 
     protected function redirectTop(){
         $this->redirectTo("");
+        exit();
     }
 
     /*
