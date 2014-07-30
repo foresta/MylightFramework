@@ -8,7 +8,7 @@ class Request {
     public static function getQuery($name = ""){
         if($name){
             if(Request::issetQuery($name)){
-                return htmlspecialchars($_GET[$name], ENT_QUOTES);
+                return $_GET[$name];
             }
             return null;
         }
@@ -23,7 +23,7 @@ class Request {
     public static function getPost($name){
         if($name){
             if(Request::issetPost($name)){
-                return htmlspecialchars($_POST[$name], ENT_QUOTES);
+                return $_POST[$name];
             }
             return null;
         }
@@ -37,7 +37,7 @@ class Request {
 
     public static function getServer($name){
         if(isset($_SERVER[$name])){
-            return htmlspecialchars($_SERVER[$name], ENT_QUOTES);
+            return $_SERVER[$name];
         }
         return null;
     }
